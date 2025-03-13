@@ -89,14 +89,23 @@ export default function LLM({
 
   return (
     <div
-    onClick={handleToggleEmployee}
-    className={`border rounded-lg p-3 flex flex-col ${
-      isSelected ? "border-blue-500 bg-blue-50" : "border-zinc-200"
-    } cursor-pointer hover:border-blue-300 transition-colors`}>
-      <h2 className="text-lg">{name}</h2>
+      role="button"
+      tabIndex={0}
+      onClick={handleToggleEmployee}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleToggleEmployee();
+        }
+      }}
+      className={`border rounded-lg p-3 flex flex-col ${
+        isSelected 
+          ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20" 
+          : "border-zinc-200 dark:border-zinc-700"
+      } cursor-pointer hover:border-blue-300 dark:hover:border-blue-600 transition-colors dark:bg-zinc-800`}>
+      <h2 className="text-lg dark:text-white">{name}</h2>
 
       {!hideDetails && (
-        <ul className="flex flex-col list-disc ml-3 text-xs text-zinc-500">
+        <ul className="flex flex-col list-disc ml-3 text-xs text-zinc-500 dark:text-zinc-400">
           <li>
             <span>Input Tokens Per Minute: </span>
             <span>{inputTokensPerMinute}</span>
@@ -116,13 +125,13 @@ export default function LLM({
         </ul>
       )}
 
-      <span className="text-4xl font-semibold mt-2">
+      <span className="text-4xl font-semibold mt-2 dark:text-white">
         ${calculateCost().toFixed(2)}
       </span>
 
       <a 
         href={referenceLink} 
-        className="text-sm mt-2 w-fit text-blue-500"
+        className="text-sm mt-2 w-fit text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300"
         onClick={(e) => e.stopPropagation()}
         target="_blank"
         rel="noopener noreferrer"
@@ -131,7 +140,7 @@ export default function LLM({
       </a>
       
       {/* Debug info - can be removed in production */}
-      <div className="mt-2 text-xs text-gray-400">
+      <div className="mt-2 text-xs text-gray-400 dark:text-gray-500">
         ID: {id} {isSelected ? "(Selected)" : ""}
       </div>
     </div>
