@@ -15,11 +15,9 @@ export default function Home() {
         <div className="flex flex-col mb-12 gap-y-4">
           <h1 className="text-4xl font-bold">25 Hours AI</h1>
 
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/michaelyuhe/25hoursai" target="_blank" rel="noopener noreferrer">
-              <GitHubLogoIcon className="w-6 h-6" />
+            <a href="https://github.com/michaelyuhe/25hoursai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-x-2">
+              <GitHubLogoIcon className="w-6 h-6" /> Modify LLM Data on GitHub
             </a>
-          </div>
 
           <p className="text-xl">
             See how much it costs to let AI work tirelessly while you enjoy your

@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
       answer: (
         <p>
           Based on the selected work hours and the LLM you choose. Calculated as
-          the LLM always works at full speed(max tokens per minute).
+          the LLM always works at full speed(max tokens per minute) and no cache enabled.
         </p>
       ),
     },
