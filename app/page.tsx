@@ -15,7 +15,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold">25 Hours AI</h1>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com/matt-west/25hoursai" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/michaelyuhe/25hoursai" target="_blank" rel="noopener noreferrer">
               <GitHubLogoIcon className="w-6 h-6" />
             </a>
           </div>
