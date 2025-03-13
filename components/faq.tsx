@@ -8,8 +8,8 @@ interface FAQItemProps {
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{question}</h3>
-      <div className="text-gray-600">{answer}</div>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">{question}</h3>
+      <div className="text-gray-700 dark:text-gray-400">{answer}</div>
     </div>
   );
 };

@@ -26,15 +26,15 @@ export default function Configs() {
     <div className="mb-8 w-full">
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-medium">Work Hours Configuration</h2>
+          <h2 className="text-lg font-medium text-gray-900 dark:text-white">Work Hours Configuration</h2>
           <div className="flex items-center gap-x-2">
-            <span className="text-sm text-zinc-500">
+            <span className="text-sm text-gray-600 dark:text-zinc-400">
               Hide details
             </span>
             <button
               onClick={toggleHideDetails}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                hideDetails ? "bg-blue-500" : "bg-zinc-300"
+                hideDetails ? "bg-blue-500" : "bg-gray-300 dark:bg-zinc-600"
               }`}
             >
               <span
@@ -50,21 +50,21 @@ export default function Configs() {
           {workHours.map((workHour) => (
             <div
               key={workHour.id}
-              className={`border p-3 rounded-lg cursor-pointer hover:bg-zinc-100 transition-colors ${
+              className={`border p-3 rounded-lg cursor-pointer transition-colors ${
                 currentWorkHourId === workHour.id
-                  ? "border-blue-500 bg-blue-50"
-                  : "border-zinc-300"
+                  ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-400"
+                  : "border-gray-200 bg-white hover:bg-gray-50 dark:border-zinc-700 dark:bg-neutral-800 dark:hover:bg-zinc-700"
               }`}
               onClick={() => handleWorkHourChange(workHour.id)}
             >
               <div className="flex items-center gap-x-2">
                 <div className="flex-1">
-                  <div className="font-medium text-lg">{workHour.id} Work Mode</div>
+                  <div className="font-medium text-lg text-gray-900 dark:text-white">{workHour.id} Work Mode</div>
                     <div className="flex flex-col mt-1">
-                      <div className="text-sm text-zinc-500">
+                      <div className="text-sm text-gray-600 dark:text-zinc-400">
                         {workHour.description}
                       </div>
-                      <div className="text-sm text-zinc-500">
+                      <div className="text-sm text-gray-600 dark:text-zinc-400">
                         {workHour.hoursPerDay} hours ×{" "}
                         {workHour.workDaysPerMonth} days per month
                       </div>
