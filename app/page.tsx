@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import LLM from "@/components/llm";
 import Configs from "@/components/configs";
 import { llms } from "@/lib/constants";
@@ -26,14 +27,20 @@ export default function Home() {
           </p>
         </div>
 
-        <Configs />
+        <Suspense fallback={<div>Loading configuration...</div>}>
+          <Configs />
+        </Suspense>
         
-        <Overview />
+        <Suspense fallback={<div>Loading overview...</div>}>
+          <Overview />
+        </Suspense>
 
         <div className="grid grid-cols-2 gap-4 w-full">
-          {llms.map((llm) => (
-            <LLM key={llm.id} {...llm} />
-          ))}
+          <Suspense fallback={<div>Loading LLM data...</div>}>
+            {llms.map((llm) => (
+              <LLM key={llm.id} {...llm} />
+            ))}
+          </Suspense>
         </div>
 
         <FAQ />
